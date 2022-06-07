@@ -1,5 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Methods: GET,HEAD,POST,PUT,DELETE,OPTIONS,TRACE');
 header('Content-Type: application/json');
 
 include_once 'config/Database.php';
@@ -21,15 +23,10 @@ if ($param && $param[2]){
     $music_cd_id = $param[2];
 }
 
-header('Access-Control-Allow-Origin: *'); // allow angular app
-header('Access-Control-Allow-Headers: *');
-header('Access-Control-Allow-Methods: GET,HEAD,POST,PUT,DELETE,OPTIONS,TRACE');
-
 $response = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-    header('Content-Type: application/problem+json; charset=utf-8');
     if ($music_cd_id){
         $res = $music_cd->fetchOne($music_cd_id);
 

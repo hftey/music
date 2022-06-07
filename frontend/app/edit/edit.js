@@ -60,10 +60,7 @@ app.controller('EditCtrl', function($scope, $http, $window, $routeParams) {
 
     $scope.delete = function(index){
         $http.delete("http://testcd.localhost/cds/"+id).then(function(response) {
-
-                if (response.data.status == 'ok'){
-                    $window.location.href = '/#!/dashboard';
-                }
+                $window.location.href = '/#!/dashboard';
             },
             function(response){
                 console.log('Error', response);
