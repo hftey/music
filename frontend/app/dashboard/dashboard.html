@@ -1,0 +1,40 @@
+<div ng-app="myApp.dashboard" ng-controller="DashboardCtrl">
+    <table class="table table-striped">
+        <thead>
+        <tr><th colspan="4">Music CD</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>#</th>
+            <th>Artist Name</th>
+            <th>Album Title</th>
+            <th>Catalog No</th>
+            <th>Release Year</th>
+            <th>Genre</th>
+            <th>Composer</th>
+            <th>Owner</th>
+            <th> </th>
+        </tr>
+
+        <tr ng-repeat="music in music_list">
+            <td>{{$index + 1}}</td>
+            <td>{{music.artist_name}}</td>
+            <td>{{music.album_title}}</td>
+            <td>{{music.album_catalog_no}}</td>
+            <td>{{music.release_year}}</td>
+            <td>{{music.genre}}</td>
+            <td>{{music.composer}}</td>
+            <td>{{music.owner}}</td>
+            <td>
+                <button class="btn btn-warning btn-small" ng-click="editItem(music.id)">
+                    <i class="icon-pencil icon-white"></i> Edit
+                </button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button ng-hide="edit" class="btn btn-success" ng-click="addItem()">
+        <i class="icon-plus icon-white"></i> Add
+    </button>
+</div>

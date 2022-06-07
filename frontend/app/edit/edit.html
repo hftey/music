@@ -1,0 +1,23 @@
+<div ng-app="myApp.edit" ng-controller="EditCtrl">
+
+<form name="musicForm"  ng-submit="submitMyForm()">
+  <input type="text" ng-model="fields.artist_name"  name="artist_name" placeholder="Artist Name" required>
+  <input type="text" ng-model="fields.album_title" name="album_title" placeholder="Album Title" required>
+  <input type="text" ng-model="fields.album_catalog_no" name="album_catalog_no" placeholder="Catalog No">
+  <input type="number" ng-model="fields.release_year" name="release_year" placeholder="Release Year" required min="1901">
+  <input type="text" ng-model="fields.genre" name="genre" placeholder="Genre" required>
+  <input type="text" ng-model="fields.composer" name="composer" placeholder="Composer" >
+  <input type="text" ng-model="fields.owner" name="owner" placeholder="Owner" required>
+
+
+  <button class="btn btn-success" type="submit">
+    <i class="icon-plus icon-white"></i> Save
+  </button>
+  <button class="btn btn-warning" type="button"  ng-click="cancelAdd()">
+    <i class="icon-plus icon-white"></i> Cancel
+  </button>
+  <button ng-if="id" class="btn btn-danger" type="button"  ng-click="delete()">
+    <i class="icon-plus icon-white"></i> Delete
+  </button>
+</form>
+</div>
